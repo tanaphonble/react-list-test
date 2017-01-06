@@ -10,8 +10,6 @@ class AddUserPage extends Component {
                 <span>|</span>
                 <Link to="/list">List</Link>
                 {this.props.children}
-                <br />
-                <button>Add User</button>
             </div>
         )
     }

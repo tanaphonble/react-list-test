@@ -4,6 +4,10 @@ import { Router, Route, Link, browserHistory, IndexRoute } from 'react-router'
 import AddUserPage from './components/AddUserPage'
 import FormAddUser from './components/FormAddUser'
 import UserList from './components/UserList'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+
+let store = createStore("reducer")
 
 class UserListWrapper extends Component {
     render() {
@@ -16,12 +20,14 @@ class UserListWrapper extends Component {
 // 
 
 render(
-    <Router history={browserHistory}>
-        <Route path="/" component={AddUserPage}>
-            <IndexRoute component={FormAddUser} />
-            <Route path="list" component={UserListWrapper}></Route>
-        </Route>
-    </Router>
+    <Provider store={store}>
+        <Router history={browserHistory}>
+            <Route path="/" component={AddUserPage}>
+                <IndexRoute component={FormAddUser} />
+                <Route path="list" component={UserListWrapper}></Route>
+            </Route>
+        </Router>
+    </Provider>
     ,
     document.getElementById('root')
 )

@@ -6,6 +6,7 @@ class FormAddUser extends Component {
             <div>
                 <label>name</label>
                 <input type="text" /><br />
+                <button>Add User</button>
             </div>
         )
     }
