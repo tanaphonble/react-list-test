@@ -5,11 +5,11 @@ import React, { Component, createClass } from 'react'
 class UserList extends Component {
     render() {
         return (
-            <ul>
+            <ol>
                 {this.props.users.map
                     ((user, index) => (<li key={index}>{user}</li>))
                 }
-            </ul>
+            </ol>
         )
     }
 }

@@ -6,8 +6,9 @@ import FormAddUser from './components/FormAddUser'
 import UserList from './components/UserList'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
+import users from './reducers/users'
 
-let store = createStore("reducer")
+let store = createStore(users)
 
 class UserListWrapper extends Component {
     render() {
@@ -17,7 +18,6 @@ class UserListWrapper extends Component {
         )
     }
 }
-// 
 
 render(
     <Provider store={store}>
